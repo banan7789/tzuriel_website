@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>השכרת מכונות מזון לאירועים</title>
+    <link rel="stylesheet" href="Style_tz.css">
+</head>
+<body>
+    <header>
+    <div class="logo-container">
+        <img src="logo_tz.png" alt="לוגו" class="logo">
+    </div>
+        <div class="header-content">
+            <h1>השכרת מכונות מזון לאירועים</h1>
+            <p>הפכו את האירוע שלכם לבלתי נשכח עם מכונות המזון המדהימות שלנו!</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="#services" class="nav-link">שירותים</a></li>
+                <li><a href="#gallery" class="nav-link">גלריה</a></li>
+                <li><a href="#contact" class="nav-link">צור קשר</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="services">
+            <div class="section-header">
+                <h2>השירותים שלנו</h2>
+                <p>מכונות מזון מקצועיות להשכרה לכל סוג של אירוע</p>
+            </div>
+            
+            <div class="carousel-container">
+                <div class="carousel">
+                
+                    <div class="carousel-item" data-name="סוכר">
+                        <div class="carousel-item-inner">
+                            <img src="cotton candy.png" alt="מכונת סוכר">
+                            <div class="carousel-overlay">
+                                <h3>מכונת סוכר</h3>
+                                <p>100 ש"ח ליום</p>
+                                <a href="#contact" class="nav-link">צור קשר</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-name="פופקורן">
+                        <div class="carousel-item-inner">
+                            <img src="popcorn.png" alt="מכונת פופקורן">
+                            <div class="carousel-overlay">
+                                <h3>מכונת פופקורן</h3>
+                                <p>100 ש"ח ליום</p>
+                                <a href="#contact" class="nav-link">צור קשר</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-name="נקניקיות">
+                        <div class="carousel-item-inner">
+                            <img src="Sausage Machine.png" alt="מכונת נקניקיות">
+                            <div class="carousel-overlay">
+                                <h3>מכונת נקניקיות</h3>
+                                <p>100 ש"ח ליום</p>
+                                <a href="#contact" class="nav-link">צור קשר</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="section-header">
+                <h2>גלריית אירועים</h2>
+                <p>תמונות מהאירועים המרגשים שלנו</p>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="event3.jpg" alt="אירוע 1">
+                        <div class="gallery-overlay">
+                            <h3>אירוע חגיגי</h3>
+                            <p>מכונות מזון מרהיבות</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="event2.jpg" alt="אירוע 2">
+                        <div class="gallery-overlay">
+                            <h3>יום הולדת מיוחד</h3>
+                            <p>חוויה טעימה</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="event1.jpg" alt="אירוע 3">
+                        <div class="gallery-overlay">
+                            <h3>אירוע משפחתי</h3>
+                            <p>זיכרונות מתוקים</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section id="contact">
+            <div class="section-header">
+                <h2>צור קשר</h2>
+                <p>יש לכם שאלות? אנחנו כאן בשבילכם!</p>
+            </div>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">שם מלא</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">אימייל</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">טלפון</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">הודעה</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">שלח הודעה</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        // JavaScript ליצירת קישור מותאם אישית לווצאפ
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // ביטול השליחה של הטופס כברירת מחדל
+
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+
+            // מספר הטלפון של העסק בפורמט בינלאומי (לשנות למספר שלך)
+            const businessPhone = '972508882797';
+
+            // יצירת הודעה מותאמת אישית
+            const whatsappMessage = `היי, קוראים לי ${name}, ואני מעוניין/ת ב: ${message}`;
+
+            // קידוד ההודעה ל-URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+
+            // יצירת קישור לווצאפ
+            const whatsappLink = `https://wa.me/${businessPhone}?text=${encodedMessage}`;
+
+            // פתיחת ווצאפ בקישור חדש
+            window.open(whatsappLink, '_blank');
+        });
+    </script>
+
+</html>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 השכרת מכונות מזון. כל הזכויות שמורות.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon">פייסבוק</a>
+                <a href="#" class="social-icon">אינסטגרם</a>
+                <a href="#" class="social-icon">וואטסאפ</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js_tz.js"></script>
+</body>
+</html>
